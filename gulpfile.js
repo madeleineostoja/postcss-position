@@ -13,4 +13,9 @@ gulp.task('test', function () {
   return gulp.src('test/*.js', { read: false }).pipe(mocha());
 });
 
-gulp.task('default', ['lint', 'test']);
+gulp.task('watch', function() {
+  gulp.watch('**/*.js', ['check'] );
+});
+
+gulp.task('check', ['lint', 'test']);
+gulp.task('default', ['check', 'watch']);
