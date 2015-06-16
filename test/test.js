@@ -1,5 +1,8 @@
+/*eslint no-unused-expressions: 0*/
+'use strict';
+
 var postcss = require('postcss'),
-    expect  = require('chai').expect,
+    expect = require('chai').expect,
     plugin = require('../');
 
 var test = function (input, output, opts, done) {

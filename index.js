@@ -16,7 +16,7 @@ module.exports = postcss.plugin('postcss-position', function () {
           types = ['relative', 'absolute', 'fixed'];
 
       // only process our custom declarations
-      if(types.indexOf(type) === -1) {
+      if (types.indexOf(type) === -1) {
         return false;
       }
 
