@@ -1,7 +1,6 @@
-var postcss = require('postcss');
-var expect  = require('chai').expect;
-
-var plugin = require('../');
+var postcss = require('postcss'),
+    expect  = require('chai').expect,
+    plugin = require('../');
 
 var test = function (input, output, opts, done) {
   postcss([ plugin(opts) ]).process(input).then(function (result) {
@@ -14,17 +13,27 @@ var test = function (input, output, opts, done) {
 };
 
 describe('postcss-position', function () {
+  var input = '',
+    output = '',
+    opts = {};
 
-  it('sets position and offsets', function (done) {
-    test('a{ absolute: 0 0 0 0; }', 'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; }', { }, done);
+  afterEach(function(done) {
+    test(input, output, opts, done);
   });
 
-  it('handles two values', function (done) {
-    test('a{ absolute: 0 0; }', 'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; }', { }, done);
+  it('sets position and offsets', function () {
+    input = 'a{ absolute: 0 0 0 0; }';
+    output = 'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; }';
   });
 
-  it('handles different values', function (done) {
-    test('a{ absolute: .1vw auto 50% 10px; }', 'a{ position: absolute; top: .1vw; right: auto; bottom: 50%; left: 10px; }', { }, done);
+  it('handles two values', function () {
+    input = 'a{ absolute: 0 0; }';
+    output = 'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; }';
+  });
+
+  it('handles different values', function () {
+    input = 'a{ absolute: .1vw auto 50% 10px; }';
+    output = 'a{ position: absolute; top: .1vw; right: auto; bottom: 50%; left: 10px; }';
   });
 
 });
