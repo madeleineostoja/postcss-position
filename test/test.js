@@ -21,19 +21,24 @@ describe('postcss-position', function () {
     test(input, output, opts, done);
   });
 
-  it('sets position and offsets', function () {
-    input = 'a{ absolute: 0 0 0 0; }';
-    output = 'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; }';
+  it('sets position and offsets', function (done) {
+    test('a{ absolute: 10px 20px 30px 40px; }',
+         'a{ position: absolute; top: 10px; right: 20px; bottom: 30px; left: 40px; }', { }, done);
   });
 
-  it('handles two values', function () {
-    input = 'a{ absolute: 0 0; }';
-    output = 'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; }';
+  it('handles one value', function (done) {
+    test('a{ absolute: 0; }',
+         'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; }', { }, done);
   });
 
-  it('handles different values', function () {
-    input = 'a{ absolute: .1vw auto 50% 10px; }';
-    output = 'a{ position: absolute; top: .1vw; right: auto; bottom: 50%; left: 10px; }';
+  it('handles two values', function (done) {
+    test('a{ absolute: 10px 0; }',
+         'a{ position: absolute; top: 10px; right: 0; bottom: 10px; left: 0; }', { }, done);
+  });
+
+  it('handles three values', function (done) {
+    test('a{ absolute: 10px auto 20px; }',
+         'a{ position: absolute; top: 10px; right: auto; bottom: 20px; left: auto; }', { }, done);
   });
 
 });

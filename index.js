@@ -10,7 +10,8 @@ module.exports = postcss.plugin('postcss-position', function () {
 
       // define declarations and values
       var type = decl.prop,
-          vals = [],
+          inputVals = [],
+          outputVals = [],
           pos = ['top', 'right', 'bottom', 'left'],
           types = ['relative', 'absolute', 'fixed'];
 
@@ -20,20 +21,20 @@ module.exports = postcss.plugin('postcss-position', function () {
       }
 
       // put the values into an array
-      vals = decl.value.split(' ');
+      inputVals = decl.value.split(' ');
+      outputVals = inputVals.slice();
 
-      // if only two values decalred, assign them to top|bottom right|left
-      if ( vals.length === 2 ) {
-          vals[2] = vals[0];
-          vals[3] = vals[1];
-      }
+      // transform input values into correct 4 outputs
+      outputVals[1] = inputVals[1] || inputVals[0];
+      outputVals[2] = inputVals[2] || inputVals[0];
+      outputVals[3] = inputVals[3] || inputVals[1] || inputVals[0];
 
       // create the position-type declaration
       decl.cloneBefore({ prop: 'position', value: type });
 
       // and each position offset
       for ( var i = 0, k = pos.length; i < k; i++) {
-          decl.cloneBefore({ prop: pos[i], value: vals[i] });
+          decl.cloneBefore({ prop: pos[i], value: outputVals[i] });
       }
 
       // remove our custom declaration

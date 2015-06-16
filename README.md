@@ -8,41 +8,53 @@
 
 ```css
 .foo {
-  absolute: 0 0 0 0;
+  absolute: 10px 20px 30px 40px;
 }
 
 .bar {
-  fixed: 30px 0; 
+  fixed: 0; 
 }
 
 .baz {
-  relative: 50% auto auto auto; 
+  absolute: 30px auto; 
+}
+
+.fab {
+  relative: 50% 0 20px; 
 }
 ```
 
 ```css
 .foo {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 40px;
 }
 
 .bar {
   position: fixed; 
-  top: 30px;
+  top: 0;
   right: 0;
-  bottom: 30px;
+  bottom: 0;
   left: 0; 
 }
 
 .baz {
+  position: absolute;
+  top: 30px;
+  right: auto;
+  bottom: 30px;
+  left: auto; 
+}
+
+.fab {
   position: relative;
   top: 50%;
-  right: auto;
-  bottom: auto;
-  left: auto; 
+  right: 0;
+  bottom: 20px;
+  left: 0; 
 }
 ```
 
