@@ -9,9 +9,9 @@ module.exports = postcss.plugin('postcss-position', function () {
 
         // get the declaration and its values
         var type = decl.prop,
-            vals = [], 
+            vals = [],
             pos = ['top', 'right', 'bottom', 'left'],
-            types = ['relative','absolute','fixed'];
+            types = ['relative', 'absolute', 'fixed'];
 
         if(types.indexOf(type) === -1) {
           return false;
@@ -20,7 +20,7 @@ module.exports = postcss.plugin('postcss-position', function () {
         vals = decl.value.split(' ');
 
         // if only two values decalred, assign them to top|bottom right|left
-        if (vals.length === 2) {
+        if ( vals.length === 2 ) {
             vals[2] = vals[0];
             vals[3] = vals[1];
         }
