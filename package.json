@@ -1,6 +1,6 @@
 {
   "name": "postcss-position",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "PostCSS plugin that provides shortcut methods for css positions (relative, absolute, fixed)",
   "keywords": [
     "postcss",
