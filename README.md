@@ -1,10 +1,7 @@
-# PostCSS Position [![Build Status][ci-img]][ci]
+# PostCSS Position 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 [PostCSS] plugin that provides shorthand declerations for position attributes.
-
-[PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/seaneking/postcss-position.svg
-[ci]:      https://travis-ci.org/seaneking/postcss-position
 
 ```css
 .foo {
@@ -58,10 +55,27 @@
 }
 ```
 
-## Usage
+--
+
+### Usage
 
 ```js
 postcss([ require('postcss-position') ])
 ```
 
 See [PostCSS] docs for examples for your environment.
+
+--
+
+### License
+
+MIT © [Sean King](http://simpla.io)
+
+[npm-image]: https://badge.fury.io/js/postcss-position.svg
+[npm-url]: https://npmjs.org/package/postcss-position
+[travis-image]: https://travis-ci.org/seaneking/postcss-position.svg?branch=master
+[travis-url]: https://travis-ci.org/seaneking/postcss-position
+[daviddm-image]: https://david-dm.org/seaneking/postcss-position.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/seaneking/postcss-position
+[PostCSS]: https://github.com/postcss/postcss
+
