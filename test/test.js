@@ -16,13 +16,6 @@ var test = function (input, output, opts, done) {
 };
 
 describe('postcss-position', function () {
-  var input = '',
-    output = '',
-    opts = {};
-
-  afterEach(function(done) {
-    test(input, output, opts, done);
-  });
 
   it('sets position and offsets', function (done) {
     test('a{ absolute: 10px 20px 30px 40px; }',
