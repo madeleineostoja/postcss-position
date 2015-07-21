@@ -37,4 +37,10 @@ describe('postcss-position', function () {
          'a{ position: absolute; top: 10px; right: auto; bottom: 20px; left: auto; }', { }, done);
   });
 
+  it('handles multiple declarations', function (done) {
+    test('a{ absolute: 0; foo: bar; relative: auto; }',
+         'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; foo: bar; position: relative; top: auto; right: auto; bottom: auto; left: auto; }', { }, done);
+  });
+
+
 });

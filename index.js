@@ -17,7 +17,7 @@ module.exports = postcss.plugin('postcss-position', function () {
 
       // only process our custom declarations
       if (types.indexOf(type) === -1) {
-        return false;
+        return;
       }
 
       // put the values into an array
