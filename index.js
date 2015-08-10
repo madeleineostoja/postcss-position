@@ -12,13 +12,7 @@ module.exports = postcss.plugin('postcss-position', function () {
       var type = decl.prop,
           inputVals = [],
           outputVals = [],
-          pos = ['top', 'right', 'bottom', 'left'],
-          types = ['relative', 'absolute', 'fixed'];
-
-      // only process our custom declarations
-      if (types.indexOf(type) === -1) {
-        return;
-      }
+          pos = ['top', 'right', 'bottom', 'left'];
 
       // put the values into an array
       inputVals = decl.value.split(' ');
@@ -42,10 +36,8 @@ module.exports = postcss.plugin('postcss-position', function () {
 
     };
 
-    // loop through each css rule and declaration, and run our plugin through them
-    css.eachRule(function(rule) {
-      rule.each(ruleHandler);
-    });
+    // loop through 'relative', 'absolute' and 'fixed' custom properties
+    css.eachDecl(/^(relative|absolute|fixed)$/, ruleHandler);
 
   };
 });
