@@ -18,27 +18,27 @@ var test = function (input, output, opts, done) {
 describe('postcss-position', function () {
 
   it('sets position and offsets', function (done) {
-    test('a{ absolute: 10px 20px 30px 40px; }',
+    test('a{ position: absolute 10px 20px 30px 40px; }',
          'a{ position: absolute; top: 10px; right: 20px; bottom: 30px; left: 40px; }', { }, done);
   });
 
   it('handles one value', function (done) {
-    test('a{ absolute: 0; }',
+    test('a{ position: absolute 0; }',
          'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; }', { }, done);
   });
 
   it('handles two values', function (done) {
-    test('a{ absolute: 10px 0; }',
+    test('a{ position: absolute 10px 0; }',
          'a{ position: absolute; top: 10px; right: 0; bottom: 10px; left: 0; }', { }, done);
   });
 
   it('handles three values', function (done) {
-    test('a{ absolute: 10px auto 20px; }',
+    test('a{ position: absolute 10px auto 20px; }',
          'a{ position: absolute; top: 10px; right: auto; bottom: 20px; left: auto; }', { }, done);
   });
 
   it('handles multiple declarations', function (done) {
-    test('a{ absolute: 0; foo: bar; relative: auto; }',
+    test('a{ position: absolute 0; foo: bar; position: relative auto; }',
          'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; foo: bar; position: relative; top: auto; right: auto; bottom: auto; left: auto; }', { }, done);
   });
 
