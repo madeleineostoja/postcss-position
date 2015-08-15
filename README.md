@@ -1,23 +1,23 @@
-# PostCSS Position 
+# PostCSS Position
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-[PostCSS] plugin that provides shorthand declerations for position attributes.
+[PostCSS] plugin that adds shorthand attributes to position declarations.
 
 ```css
 .foo {
-  absolute: 10px 20px 30px 40px;
+  position: absolute 10px 0;
 }
 
 .bar {
-  fixed: 0; 
+  position: fixed 0;
 }
 
 .baz {
-  absolute: 30px auto; 
+  position: relative 30% auto 0;
 }
 
 .fab {
-  relative: 50% 0 20px; 
+  position: absolute 10px 0 20px 30px;
 }
 ```
 
@@ -25,33 +25,33 @@
 .foo {
   position: absolute;
   top: 10px;
-  right: 20px;
-  bottom: 30px;
-  left: 40px;
+  right: 0;
+  bottom: 10px;
+  left: 0;
 }
 
 .bar {
-  position: fixed; 
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; 
+  left: 0;
 }
 
 .baz {
-  position: absolute;
-  top: 30px;
+  position: relative;
+  top: 30%;
   right: auto;
-  bottom: 30px;
-  left: auto; 
+  bottom: 0;
+  left: auto;
 }
 
 .fab {
-  position: relative;
-  top: 50%;
+  position: absolute;
+  top: 10px;
   right: 0;
   bottom: 20px;
-  left: 0; 
+  left: 30px;
 }
 ```
 
@@ -78,4 +78,3 @@ MIT © [Sean King](https://twitter.com/seaneking)
 [daviddm-image]: https://david-dm.org/seaneking/postcss-position.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/seaneking/postcss-position
 [PostCSS]: https://github.com/postcss/postcss
-
