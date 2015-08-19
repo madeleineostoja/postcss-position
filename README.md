@@ -1,7 +1,9 @@
 # PostCSS Position
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-[PostCSS] plugin that adds shorthand attributes to position declarations.
+[PostCSS][PostCSS] plugin that adds shorthand attributes to position declarations.
+
+Part of [Rucksack - CSS Superpowers](http://simplaio.github.io/rucksack).
 
 ```css
 .foo {
@@ -63,7 +65,7 @@
 postcss([ require('postcss-position') ])
 ```
 
-See [PostCSS] docs for examples for your environment.
+See [PostCSS][PostCSS] docs for examples for your environment.
 
 --
 
