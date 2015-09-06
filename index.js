@@ -41,14 +41,14 @@ var declExpander = function(decl) {
     decl.cloneBefore({prop: offset, value: outputVals[i] });
   });
 
-  decl.removeSelf();
+  decl.remove();
 
 };
 
 module.exports = postcss.plugin('postcss-position', function () {
   return function(css, result) {
 
-    css.eachDecl(function(decl){
+    css.walkDecls(function(decl){
 
       if (decl.prop === 'position') {
         declExpander(decl);
