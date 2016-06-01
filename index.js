@@ -38,7 +38,9 @@ var declExpander = function(decl) {
 
   // And each position offset
   offsets.forEach(function(offset, i){
-    decl.cloneBefore({prop: offset, value: outputVals[i] });
+    if (!/null|false/i.test(outputVals[i])) {
+      decl.cloneBefore({prop: offset, value: outputVals[i] });
+    }
   });
 
   decl.remove();
