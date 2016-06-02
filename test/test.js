@@ -42,6 +42,11 @@ describe('postcss-position', function () {
          'a{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; foo: bar; position: relative; top: auto; right: auto; bottom: auto; left: auto; }', { }, done);
   });
 
+  it('handles calc', function (done) {
+    test('a{ position: absolute calc(100vh - 10px) false false false; }',
+         'a{ position: absolute; top: calc(100vh - 10px); }', { }, done);
+  });
+
   describe('falsey removes', function() {
      it('offsets with false are skipped', function (done) {
         test('a{ position: absolute 10px false 30px false; }',
