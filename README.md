@@ -1,9 +1,11 @@
 # PostCSS Position
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-badge]][npm-url] [![Build Status][travis-badge]][travis-url] [![Dependency Status][daviddm-badge]][daviddm-url]
 
 [PostCSS][PostCSS] plugin that adds shorthand attributes to position declarations.
 
-Part of [Rucksack - CSS Superpowers](http://simplaio.github.io/rucksack).
+_Part of [Rucksack - CSS Superpowers](http://simplaio.github.io/rucksack)_
+
+**Input**
 
 ```css
 .foo {
@@ -22,6 +24,8 @@ Part of [Rucksack - CSS Superpowers](http://simplaio.github.io/rucksack).
   position: absolute 10px 0 20px 30px;
 }
 ```
+
+**Output**
 
 ```css
 .foo {
@@ -57,9 +61,8 @@ Part of [Rucksack - CSS Superpowers](http://simplaio.github.io/rucksack).
 }
 ```
 
---
 
-### Usage
+## Usage
 
 ```js
 postcss([ require('postcss-position') ])
@@ -67,16 +70,14 @@ postcss([ require('postcss-position') ])
 
 See [PostCSS][PostCSS] docs for examples for your environment.
 
---
-
-### License
+***
 
 MIT © [Sean King](https://twitter.com/seaneking)
 
-[npm-image]: https://badge.fury.io/js/postcss-position.svg
+[npm-badge]: https://badge.fury.io/js/postcss-position.svg
 [npm-url]: https://npmjs.org/package/postcss-position
-[travis-image]: https://travis-ci.org/seaneking/postcss-position.svg?branch=master
+[travis-badge]: https://travis-ci.org/seaneking/postcss-position.svg?branch=master
 [travis-url]: https://travis-ci.org/seaneking/postcss-position
-[daviddm-image]: https://david-dm.org/seaneking/postcss-position.svg?theme=shields.io
+[daviddm-badge]: https://david-dm.org/seaneking/postcss-position.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/seaneking/postcss-position
 [PostCSS]: https://github.com/postcss/postcss
