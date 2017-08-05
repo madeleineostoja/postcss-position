@@ -1,5 +1,5 @@
 # PostCSS Position
-[![NPM version][npm-badge]][npm-url] [![Build Status][travis-badge]][travis-url] [![Dependency Status][daviddm-badge]][daviddm-url]
+[![NPM version][npm-badge]][npm-url] [![Downloads][downloads-badge]][npm-url] [![Build Status][travis-badge]][travis-url]
 
 [PostCSS][PostCSS] plugin that adds shorthand attributes to position declarations.
 
@@ -76,8 +76,7 @@ MIT © [Sean King](https://twitter.com/seaneking)
 
 [npm-badge]: https://badge.fury.io/js/postcss-position.svg
 [npm-url]: https://npmjs.org/package/postcss-position
+[downloads-badge]: https://img.shields.io/npm/dm/postcss-position.svg
 [travis-badge]: https://travis-ci.org/seaneking/postcss-position.svg?branch=master
 [travis-url]: https://travis-ci.org/seaneking/postcss-position
-[daviddm-badge]: https://david-dm.org/seaneking/postcss-position.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/seaneking/postcss-position
 [PostCSS]: https://github.com/postcss/postcss
