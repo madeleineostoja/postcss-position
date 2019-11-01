@@ -17,7 +17,7 @@ var declExpander = function(decl) {
       position;
 
   // Throw decl values into an array
-  var re = /(([\+\-]?[0-9\.]+)(%|px|pt|em|in|cm|mm|ex|pc|vw)?)|(calc\(([^\)]+)\)|null|false|undefined|auto)/g,
+  var re = /(([\+\-]?[0-9\.]+)(%|px|pt|em|rem|in|cm|mm|ex|pc|vw)?)|(calc\(([^\)]+)\)|null|false|undefined|auto)/g,
     m = void 0;
 
   while ((m = re.exec(decl.value)) !== null) {
