@@ -34,7 +34,7 @@ var declExpander = function(decl) {
   }
 
   // Strip position from vals and store for safe keeping
-  position = decl.value.match(/^static|absolute|fixed|relative|sticky|initial|inherit/).toString();
+  position = decl.value.match(/^static|absolute|fixed|relative|sticky|-webkit-sticky|initial|inherit/).toString();
 
   // Transform input values into correct 4 outputs
   outputVals = (function(ins) {
@@ -89,7 +89,7 @@ module.exports = postcss.plugin('postcss-position', function () {
         declExpander(decl);
       }
 
-      if (decl.prop.match(/^(static|absolute|fixed|relative|sticky|initial|inherit)$/)) {
+      if (decl.prop.match(/^(static|absolute|fixed|relative|sticky|-webkit-sticky|initial|inherit)$/)) {
         result.warn('This syntax is no longer supported, use position: type [offsets]; instead', { node: decl });
       }
 
