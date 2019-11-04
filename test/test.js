@@ -47,6 +47,16 @@ describe('postcss-position', function () {
          'a{ position: absolute; top: calc(100vh - 10px); }', { }, done);
   });
 
+  it('handles rem units', function (done) {
+    test('a{ position: absolute false 2rem 2rem false; }',
+         'a{ position: absolute; right: 2rem; bottom: 2rem; }', { }, done);
+  });
+
+  it('handles sticky positioning', function (done) {
+    test('a{ position: sticky 1rem false false false; }',
+         'a{ position: sticky; top: 1rem; }', { }, done);
+  });
+
   describe('falsey removes', function() {
      it('offsets with false are skipped', function (done) {
         test('a{ position: absolute 10px false 30px false; }',
