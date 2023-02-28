@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "gulp-eslint": "^4.0.0",
-    "gulp-mocha": "^4.3.1",
+    "gulp-mocha": "^8.0.0",
     "chai": "^4.1.0",
     "gulp": "^3.9.1"
   },
